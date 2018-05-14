@@ -1,5 +1,5 @@
 import {put,call} from 'redux-saga/effects';
-import {delay} from 'redux-saga';
+
 import * as actions from '../actions';
 import * as api from '../api';
 
@@ -16,20 +16,20 @@ export default function* getFilterStudentsSaga(action){
                 console.log("saga studentName query ", query.studentName, item.studentHR.studentDetails.studentName)
             if(
                 query.studentName==='' && query.fatherPh===''){return true}else 
-                if(query.studentName==='' && query.fatherPh===''){return true}else 
+                 
                 if(
             item.studentHR.studentDetails.studentName === query.studentName
             &&
             item.studentHR.fatherDetails.fatherMobile === query.fatherPh)
-            {return true
-            }else  if(
+            {return true}else  
+            if(
                 item.studentHR.studentDetails.studentName === query.studentName
-                ||
-                item.studentHR.fatherDetails.fatherMobile === query.fatherPh=== '')
+                &&
+                query.fatherPh=== '')
                 {return true
                 }else if(
-                    item.studentHR.studentDetails.studentName === ''
-                    ||
+                    query.studentName === ''
+                    &&
                     item.studentHR.fatherDetails.fatherMobile === query.fatherPh)
                     {return true
                     }else{

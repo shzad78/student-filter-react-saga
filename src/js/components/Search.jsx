@@ -49,7 +49,8 @@ class Search extends Component {
           onChange={e => {
             this.setState({ studentName: e.target.value })
                         }}
-          
+         
+         style={{marginTop:'20px'}}
         />
 
          <TextField
@@ -62,8 +63,10 @@ class Search extends Component {
           onChange={e => {
             this.setState({ fatherPh: e.target.value })
                         }}
-          
+          style={{marginLeft:'20px'}}
         />
+        
+        <br />
         
         <br />
 
@@ -72,7 +75,12 @@ class Search extends Component {
         <button
           onClick={() => {
             this.props.getStudents();
+            this.setState({
+              studentName: "",
+              fatherPh: ""
+            });
           }}
+          style={{marginLeft:'10px'}}
         >
           Load  
         </button>
@@ -81,6 +89,7 @@ class Search extends Component {
           onClick={() => {
             this.props.getFilter(this.state);
           }}
+          style={{marginLeft:'20px'}}
         >
           Filter  
         </button>

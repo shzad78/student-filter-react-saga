@@ -62,7 +62,7 @@ class Results extends Component {
             <TableHeaderColumn>Hafiz</TableHeaderColumn>
           </TableRow>
         </TableHeader>
-        <TableBody displayRowCheckbox={false} adjustForCheckbox = {false}>
+        <TableBody displayRowCheckbox={false} adjustForCheckbox = {false} >
            { studentList}
            { filterList}
           
