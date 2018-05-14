@@ -50,7 +50,7 @@ class Search extends Component {
             this.setState({ studentName: e.target.value })
                         }}
          
-         style={{marginTop:'20px'}}
+         style={{marginTop:'20px', marginLeft:'20px'}}
         />
 
          <TextField
@@ -80,7 +80,7 @@ class Search extends Component {
               fatherPh: ""
             });
           }}
-          style={{marginLeft:'10px'}}
+          style={{marginLeft:'20px'}}
         >
           Load  
         </button>
@@ -89,7 +89,7 @@ class Search extends Component {
           onClick={() => {
             this.props.getFilter(this.state);
           }}
-          style={{marginLeft:'20px'}}
+          style={{marginLeft:'30px'}}
         >
           Filter  
         </button>
