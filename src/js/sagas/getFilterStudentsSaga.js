@@ -18,19 +18,19 @@ export default function* getFilterStudentsSaga(action){
                 query.studentName==='' && query.fatherPh===''){return true}else 
                  
                 if(
-            item.studentHR.studentDetails.studentName === query.studentName
+            item.studentHR.studentDetails.studentName.replace(/\s/g, '') === query.studentName.toLowerCase().replace(/\s/g, '')
             &&
-            item.studentHR.fatherDetails.fatherMobile === query.fatherPh)
+            item.studentHR.fatherDetails.fatherMobile.replace(/\s/g, '') === query.fatherPh.replace(/\s/g, '') )
             {return true}else  
             if(
-                item.studentHR.studentDetails.studentName === query.studentName
+                item.studentHR.studentDetails.studentName.replace(/\s/g, '') === query.studentName.toLowerCase().replace(/\s/g, '')
                 &&
                 query.fatherPh=== '')
                 {return true
                 }else if(
                     query.studentName === ''
                     &&
-                    item.studentHR.fatherDetails.fatherMobile === query.fatherPh)
+                    item.studentHR.fatherDetails.fatherMobile.replace(/\s/g, '') === query.fatherPh.replace(/\s/g, '') )
                     {return true
                     }else{
                 return false
