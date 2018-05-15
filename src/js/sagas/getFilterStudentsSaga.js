@@ -23,7 +23,7 @@ export default function* getFilterStudentsSaga(action){
             item.studentHR.fatherDetails.fatherMobile.replace(/\s/g, '') === query.fatherPh.replace(/\s/g, '') )
             {return true}else  
             if(
-                item.studentHR.studentDetails.studentName. === query.studentName.toLowerCase().replace(/\s/g, '')
+                item.studentHR.studentDetails.studentName.replace(/\s/g, '') === query.studentName.toLowerCase().replace(/\s/g, '')
                 &&
                 query.fatherPh=== '')
                 {return true
